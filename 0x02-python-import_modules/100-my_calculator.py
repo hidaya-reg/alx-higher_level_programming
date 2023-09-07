@@ -10,12 +10,13 @@ if __name__ == "__main__":
 
     dict_ops = {"+":add, "-":sub, "*":mul, "/":div}
 
-    if sys.argv[2] not in list(dict_ops.keys()):
+    op = sys.argv[2]
+    if op not in list(dict_ops.keys()):
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
     a = int(sys.argv[1])
     b = int(sys.argv[3])
-    op = sys.argv[2]
+    result = dict_ops[op](a, b)
 
-    print(f"{a} {op} {b} = {dict_ops[op](a, b)}")
+    print("{} {} {} = {}".format(a, op, b, result))
