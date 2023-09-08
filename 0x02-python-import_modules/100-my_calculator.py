@@ -8,7 +8,7 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-    dict_ops = {"+":add, "-":sub, "*":mul, "/":div}
+    dict_ops = {"+": add, "-": sub, "*": mul, "/": div}
 
     op = sys.argv[2]
     if op not in list(dict_ops.keys()):
