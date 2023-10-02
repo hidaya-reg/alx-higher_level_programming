@@ -96,12 +96,9 @@ class Rectangle:
         """Return string representation of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        rectangle_str = ""
-        for i in range(self.__height):
-            rectangle_str += "#" * self.__width
-            if i != self.__height - 1:
-                rectangle_str += "\n"
-        return rectangle_str
+        
+        rect = ['#' * self.__width for _ in range(self.__height)]
+        return '\n'.join(rect)
 
     def __repr__(self):
         """Return a formal representation of the rectangle"""
