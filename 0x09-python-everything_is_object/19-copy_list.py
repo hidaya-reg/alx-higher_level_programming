@@ -2,6 +2,6 @@
 """define function to copy a ist"""
 
 
-def copy_list(l):
+def copy_list(input_list):
     """Return a copy of the input list"""
-    return l[:]
+    return input_list[:]
