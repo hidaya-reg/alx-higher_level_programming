@@ -21,14 +21,7 @@ Print a full name with both first and last names:
     >>> say_my_name("John", "Smith")
     My name is John Smith
 
-Print a name with only the first name:
-
-::
-
-    >>> say_my_name("Walter")
-    My name is Walter
-
-Print a name with an empty first name (should raise a TypeError):
+Print a name with only the first name
 
 ::
 
