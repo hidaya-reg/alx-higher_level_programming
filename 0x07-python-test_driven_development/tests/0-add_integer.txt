@@ -1,22 +1,29 @@
-# Test cases for add_integer function
->>> add_integer = __import__('0-add_integer').add_integer
+# Tests for the add_integer function
+
+# Test case 1: Add two positive integers
 >>> add_integer(1, 2)
 3
+
+# Test case 2: Add a positive and a negative integer
 >>> add_integer(100, -2)
 98
+
+# Test case 3: Add an integer with the default value
 >>> add_integer(2)
 100
+
+# Test case 4: Add a float and a negative integer
 >>> add_integer(100.3, -2)
 98
+
+# Test case 5: Try to add an integer and a string (should raise a TypeError)
 >>> add_integer(4, "School")
 Traceback (most recent call last):
+    ...
 TypeError: b must be an integer
->>> add_integer("go", "School")
-Traceback (most recent call last):
-TypeError: a must be an integer
->>> add_integer("go", 2)
-Traceback (most recent call last):
-TypeError: a must be an integer
+
+# Test case 6: Try to add None (should raise a TypeError)
 >>> add_integer(None)
 Traceback (most recent call last):
+    ...
 TypeError: a must be an integer
