@@ -4,28 +4,65 @@ The ``7-base_geometry`` module
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
+
+:: passing positive integer
 >>> bg.integer_validator("width", 89)
->>> bg.integer_validator("width", 0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 29, in integer_validator
-    raise ValueError("{} must be greater than 0".format(name))
-ValueError: width must be greater than 0
+
+:: passing negative value
 >>> bg.integer_validator("width", -5)
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 29, in integer_validator
-    raise ValueError("{} must be greater than 0".format(name))
+	...
 ValueError: width must be greater than 0
+
+:: passing boolean in value
 >>> bg.integer_validator("width", True)
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 26, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
+	...
 TypeError: width must be an integer
+
+:: passing string in value
 >>> bg.integer_validator("width", "light")
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 26, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
+	...
 TypeError: width must be an integer
+
+:: missing one argument
+>>> bg.integer_validator("width")
+Traceback (most recent call last):
+	...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+:: passing 0
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+	...
+ValueError: width must be greater than 0
+
+:: passing no arguments
+>>> bg.integer_validator()
+Traceback (most recent call last):
+	...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+:: passing tuple
+>>> bg.integer_validator("width", (1,))
+Traceback (most recent call last):
+	...
+TypeError: width must be an integer
+
+:: passing list 
+>>> bg.integer_validator("width", [1])
+Traceback (most recent call last):
+	...
+TypeError: width must be an integer
+
+:: passing None
+>>> bg.integer_validator("width", None)
+Traceback (most recent call last):
+	...
+TypeError: width must be an integer
+
+:: passing NULL
+>>> bg.integer_validator("width", NULL)
+	...
+NameError: name 'NULL' is not defined
