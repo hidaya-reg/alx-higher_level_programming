@@ -24,3 +24,13 @@ class Square(Rectangle):
     def __str__(self):
         """Representation of square"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """function that assign attributes"""
+        if args:
+            attrs = ["id", "size", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
