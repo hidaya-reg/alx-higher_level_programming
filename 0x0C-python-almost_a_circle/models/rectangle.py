@@ -29,7 +29,7 @@ class Rectangle(Base):
     def height(self):
         """getter of height"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """setter of height"""
@@ -40,7 +40,7 @@ class Rectangle(Base):
     def x(self):
         """getter of x"""
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """setter of x"""
@@ -51,7 +51,7 @@ class Rectangle(Base):
     def y(self):
         """getter of y"""
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """setter of y"""
@@ -80,7 +80,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """representation of rectangle object"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        s = "[Rectangle] ({}) {}/{} - {}/{}"
+        return s.format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """Update rectangle arguments"""
