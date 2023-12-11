@@ -1,7 +1,8 @@
 #!/usr/bin/node
+// Prints message depending on the number of arguments
 
-const { argv } = require('node:process');
-const args = argv.length;
+const args = process.argv.length;
+
 
 if (args === 2) {
   console.log('No argument');
