@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    query = "SELECT * from states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (state_name,))
+    query = "SELECT * from states WHERE `name` = '{}' ORDER BY `id`"
+    cursor.execute(query.format(state_name))
     states = cursor.fetchall()
 
     for state in states:
