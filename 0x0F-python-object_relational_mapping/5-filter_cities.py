@@ -31,6 +31,8 @@ if __name__ == "__main__":
 
     if cities:
         print(cities)
+    else:
+        print()
 
     cursor.close()
     db.close()
