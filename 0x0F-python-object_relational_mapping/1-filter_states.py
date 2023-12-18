@@ -5,14 +5,18 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    u = sys.argv[1]
-    p = sys.argv[2]
-    d = sys.argv[3]
+    host = "localhost"
+    port = 3306
+    user, password, database = sys.argv[1:4]
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=u, password=p, db=d)
+    db = MySQLdb.connect(
+            host=host, port=port,
+            user=user, password=password,
+            db=database)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY state")
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+    cursor.execute(query)
     states = cursor.fetchall()
 
     for state in states:
