@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""creates the State “California” with the City “San Francisco”"""
+"""Creates the State “California” with the City “San Francisco”"""
 
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from relationship_state import Base, State
-from relationship_city import City
+from relationship_state import State
+from relationship_city import City, Base
 
 if __name__ == "__main__":
     username, password, database = sys.argv[1:4]
@@ -13,16 +13,12 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, database))
 
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
+
     session = Session()
 
-    Base.metadata.create_all(engine)
-
-    california = State(name="California")
-    san_francisco = City(name="San Francisco", state=california)
-
-    session.add(california)
-    session.add(san_francisco)
-
+    session.add(City(name="San Francisco", state=State(name="California")))
     session.commit()
+
     session.close()
