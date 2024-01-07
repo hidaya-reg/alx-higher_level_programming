@@ -14,5 +14,5 @@ try:
     with urllib.request.urlopen(url) as response:
         decoded_response = response.read().decode('utf-8')
         print(decoded_response)
-except urllib.error.HTTPError as e:
+except HTTPError as e:
     print("Error code: {}".format(e.code))
