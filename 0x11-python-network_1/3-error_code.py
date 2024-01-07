@@ -15,4 +15,4 @@ try:
         decoded_response = response.read().decode('utf-8')
         print(decoded_response)
 except urllib.error.HTTPError as e:
-    print(f"Error code: {e.code}")
+    print("Error code: {}".format(e.code))
