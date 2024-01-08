@@ -27,6 +27,7 @@ if __name__ == "__main__":
                 author_name = commit['commit']['author']['name']
                 print(f"{sha}: {author_name}")
         else:
-            print("Error fetching data. Please check the repository and owner names.")
+            print("Error fetching data. Please check the repository and owner\
+                    names.")
     except requests.RequestException:
         print("Error: Unable to connect to the GitHub API.")
