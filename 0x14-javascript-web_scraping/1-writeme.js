@@ -6,7 +6,5 @@ const content = process.argv[3];
 fs.writeFile(file, content, 'utf-8', function (err) {
   if (err) {
     console.log(err);
-  } else {
-    console.log('The file has been successfully written.');
   }
 });
