@@ -1,7 +1,5 @@
 #!/usr/bin/node
-
 const request = require('request');
-
 function countMovies(url) {
   request(url, function (error, response, body) {
     if (!error && response.statusCode === 200) {
@@ -23,5 +21,4 @@ function countMovies(url) {
     }
   });
 }
-
 countMovies(process.argv[2]);
