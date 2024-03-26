@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 const request = require('request');
 function countMovies(url) {
   request(url, function (error, response, body) {
