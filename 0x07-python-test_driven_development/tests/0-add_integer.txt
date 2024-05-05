@@ -28,3 +28,9 @@ TypeError: b must be an integer
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
+# Test case 7: convrt float 'NaN'
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
