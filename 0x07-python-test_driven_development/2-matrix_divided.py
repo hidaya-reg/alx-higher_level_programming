@@ -21,10 +21,12 @@ def matrix_divided(matrix, div):
                or if `div` is not a number.
         ZeroDivisionError: If `div` is equal to zero.
     """
-    if not isinstance(matrix, list) or not all(isinstance(r, list) for r in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if not all(isinstance(r, list) for r in matrix):
+        msg = "matrix must be a matrix (list of lists) of integers/floats"
+        raise TypeError(msg)
     if not all(isinstance(elt, (int, float)) for r in matrix for elt in r):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+         msg = "matrix must be a matrix (list of lists) of integers/floats"
+         raise TypeError(msg)
     if not all(len(r) == len(matrix[0]) for r in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
