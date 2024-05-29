@@ -10,24 +10,18 @@ Usage
 
 ``print_square(...)`` prints a square of '#' characters with the specified size.
 
-::
+# Test case 1: import module
 
     >>> print_square = __import__('4-print_square').print_square
 
-Print a square with size 4:
-
-::
-
+# Test case 2: Print a square with size 4:
     >>> print_square(4)
     ####
     ####
     ####
     ####
 
-Print a square with size 10:
-
-::
-
+# Test case 3: Print a square with size 10:
     >>> print_square(10)
     ##########
     ##########
@@ -40,26 +34,22 @@ Print a square with size 10:
     ##########
     ##########
 
-Print an empty square with size 0:
-
-::
-
+# Test case 4: Print an empty square with size 0:
     >>> print_square(0)
     
 
-Print a square with size 1:
-
-::
-
+# Test case 5: Print a square with size 1:
     >>> print_square(1)
     #
 
-Print a square with negative size (should raise ValueError):
-
-::
-
+# Test case 6: Print a square with negative size (should raise ValueError):
     >>> print_square(-1)
     Traceback (most recent call last):
         ...
     ValueError: size must be >= 0
 
+# Test case 7: Print a square with non integer size (should raise TypeError):
+    >>> print_square(0.2)
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
