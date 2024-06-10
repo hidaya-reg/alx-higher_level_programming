@@ -18,19 +18,16 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     delimiters = ".?:"
-    
-    # Initialize an empty result string
+
     result = ""
-    
-    # Temporary buffer to accumulate characters
+
     temp = ""
-    
+
     for char in text:
         temp += char
         if char in delimiters:
             result += temp.strip() + "\n\n"
             temp = ""
-    
-    # Add any remaining text after the last delimiter
+
     result += temp.strip()
     print(result, end='')
