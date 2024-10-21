@@ -815,6 +815,38 @@ except AttributeError:
 print(hobby)  # Output: No hobby defined
 ```
 </details>
+<details>
+<summary>Tracking Instances</summary>
+
+### Tracking Instances
+Python does not automatically maintain a list of all instances of a class. You can implement this functionality manually using a **class variable** to store the instances as they are created.
+
+#### Example
+```python
+class MyClass:
+    instances = []  # Class variable to hold all instances
+
+    def __init__(self, name):
+        self.name = name
+        MyClass.instances.append(self)  # Add the new instance to the list
+
+# Creating instances
+obj1 = MyClass("Object 1")
+obj2 = MyClass("Object 2")
+obj3 = MyClass("Object 3")
+
+# Accessing all instances
+for instance in MyClass.instances:
+    print(instance.name)
+```
+#### Considerations
+- This approach does not automatically handle cases where instances are deleted. If you want to keep the list updated, you would need to implement a way to remove instances from the list when they are deleted.
+- You can use the ``__del__`` method to remove an instance from the list when it is being destroyed:
+```python
+def __del__(self):
+    MyClass.instances.remove(self)
+```
+</details>
 
 ## Tasks
 ### 0. My first square
