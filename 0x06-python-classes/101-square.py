@@ -80,7 +80,7 @@ class Square:
         """Return representation of square as string
         """
         if self.__size == 0:
-            return "\n"
+            return ""
 
         s = ""
         s += "\n" * self.__position[1]
