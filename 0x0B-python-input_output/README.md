@@ -48,6 +48,12 @@ with open('example.txt', 'r') as file:
 # No need to explicitly call file.close() here
 ```
 #### Writing to a file
+**What f.write() Does:**
+1. Writes Data to a File: It writes the specified content to the file at the current file position (which can be modified by ``f.seek()``).
+**2. Returns the Number of Characters Written:** It returns an integer indicating the number of characters (or bytes in the case of binary data) that were written to the file.
+**3. Overwrites or Appends Data:**
+- In write mode (``'w'``): If the file already exists, it will be truncated (cleared) before writing the new data, effectively overwriting the file.
+- In append mode (``'a'``): It appends the data to the end of the file without deleting any existing content.
 ```python
 # Open a file in write mode
 with open('output.txt', 'w') as file:
@@ -72,11 +78,25 @@ with open('example.txt', 'r') as file:
 
 ### ``read()``
 To read the full content of a file in Python, you can use the ``read()`` method after opening the file.
+#### What f.read() Does:
+**1. Reads the Entire File:** When you call ``f.read()``, it reads the entire file from the current file position (typically the beginning unless the position is moved).
+**2. Returns as a String:** It returns the file content as a string. If the file contains binary data, it returns the content as a bytes object instead of a string.
+**3. Moves the Cursor:** After reading the file, the file pointer (cursor) moves to the end of the file, so subsequent reads will return an empty string unless you reposition the cursor (e.g., with f.seek(0)).
 ```python
 # Open a file in read mode
 with open('example.txt', 'r') as file:
     content = file.read()  # Reads the entire content of the file
     print(content)
+```
+**Behavior:**
+**- If the file is small:** It will read and return the entire content as a single string.
+**- If the file is large:** Reading large files entirely can consume a lot of memory. In such cases, it is recommended to read the file in chunks (e.g., using a loop or ``f.read(size)``).
+#### Example with ``f.read(size)``:
+If you want to read the file in chunks (e.g., 100 characters at a time):
+```python
+with open('example.txt', 'r') as f:
+    chunk = f.read(100)  # Read the first 100 characters
+    print(chunk)
 ```
 </details>
 <details>
