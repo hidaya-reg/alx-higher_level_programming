@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ 100-main """
-from models.rectangle import Rectangle
-from models.square import Square
+from modeltest.rectangle import Rectangle
+from modeltest.square import Square
 
 if __name__ == "__main__":
 
